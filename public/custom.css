@@ -1,0 +1,37 @@
+/* table img .list{
+    /* width:90px !important;
+    size: 50px !important; 
+    width: 120px !important;
+    height: 120px !important;
+    height: auto !important;
+    float: left !important;
+    margin: 3px !important;
+    padding: 3px !important;
+    
+} */
+.bgLogin,.bgRegister,.bgHome {
+    background-image: url(./bg.png);
+    background-size: 100%, 100vh ;
+    background-position: center;
+    height: 92.5vh;
+    background-repeat: no-repeat;
+}
+
+/* .nav {
+    background-color: linear-gradient(to right,
+    #09bce9,
+    #0c91cf,
+    #1d41e0) !important;
+} */
+
+.login {
+    background-color: rgba(19, 96, 163, 0.438) !important; 
+}
+
+.register {
+    background-color: rgba(19, 96, 163, 0.438) !important; 
+}
+
+.loginBtn {
+    font-style: italic;
+}

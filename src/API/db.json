@@ -1,0 +1,67 @@
+{
+  "users": [
+    {
+      "username": "fadil",
+      "email": "latif",
+      "password": "123",
+      "id": 1
+    },
+    {
+      "username": "latif",
+      "email": "rmdhn",
+      "password": "123",
+      "id": 2
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "Hoodie Supermie",
+      "desc": "Lorem ipsum dolor sit amet",
+      "price": 135000,
+      "src": "https://img.favpng.com/19/13/24/minato-namikaze-rasengan-goku-naruto-uzumaki-png-favpng-vJdH1T3McTrxPrfC8GY1Nn3rP.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Sepatu Piero",
+      "desc": "Lorem ipsum dolor sit amet",
+      "price": 150000,
+      "src": "https://www.pngfind.com/pngs/m/162-1621689_cloud9-lcs-jersey-cloud-9-csgo-jersey-hd.png"
+    },
+    {
+      "id": 3,
+      "name": "Sandals Swelow",
+      "desc": "Lorem ipsum dolor sit amet",
+      "price": 235000,
+      "src": "https://www.pngfind.com/pngs/m/162-1621689_cloud9-lcs-jersey-cloud-9-csgo-jersey-hd.png"
+    },
+    {
+      "id": 4,
+      "name": "T-Shirt O Neck",
+      "desc": "Lorem ipsum dolor sit amet",
+      "price": 178000,
+      "src": "https://www.pngfind.com/pngs/m/162-1621689_cloud9-lcs-jersey-cloud-9-csgo-jersey-hd.png"
+    },
+    {
+      "id": 5,
+      "name": "T-Shirt V Neck",
+      "desc": "Lorem ipsum dolor sit amet",
+      "price": 179000,
+      "src": "https://www.pngfind.com/pngs/m/162-1621689_cloud9-lcs-jersey-cloud-9-csgo-jersey-hd.png"
+    },
+    {
+      "name": "oblong",
+      "desc": "Lorem ipsum dolor sit amet",
+      "price": 145600,
+      "src": "https://www.pngfind.com/pngs/m/162-1621689_cloud9-lcs-jersey-cloud-9-csgo-jersey-hd.png",
+      "id": 6
+    },
+    {
+      "name": "Naruto",
+      "desc": "Lorem ipsum dolot sit amet",
+      "price": 14045,
+      "src": "https://img.favpng.com/19/13/24/minato-namikaze-rasengan-goku-naruto-uzumaki-png-favpng-vJdH1T3McTrxPrfC8GY1Nn3rP.jpg",
+      "id": 7
+    }
+  ]
+}
