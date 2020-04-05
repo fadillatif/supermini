@@ -19,6 +19,7 @@
       "name": "T-Shirt Supermie",
       "desc": "Lorem ipsum dolor sit amet",
       "price": 135000,
+      "qty": "3",
       "src": "https://www.tokome.id/images/product/minilab99/MTS000988/2/kaos-pria-fullprint.jpg"
     },
     {
@@ -26,13 +27,7 @@
       "name": "Sepatu Piero",
       "desc": "Lorem ipsum dolor sit amet",
       "price": 150000,
-      "src": "https://www.pngfind.com/pngs/m/162-1621689_cloud9-lcs-jersey-cloud-9-csgo-jersey-hd.png"
-    },
-    {
-      "id": 3,
-      "name": "Sandals Swelow",
-      "desc": "Lorem ipsum dolor sit amet",
-      "price": 235000,
+      "qty": 2,
       "src": "https://www.pngfind.com/pngs/m/162-1621689_cloud9-lcs-jersey-cloud-9-csgo-jersey-hd.png"
     },
     {
@@ -40,28 +35,24 @@
       "name": "T-Shirt O Neck",
       "desc": "Lorem ipsum dolor sit amet",
       "price": 178000,
+      "qty": 2,
       "src": "https://www.pngfind.com/pngs/m/162-1621689_cloud9-lcs-jersey-cloud-9-csgo-jersey-hd.png"
-    },
-    {
-      "id": 5,
-      "name": "T-Shirt V Neck",
-      "desc": "Lorem ipsum dolor sit amet",
-      "price": 179000,
-      "src": "https://www.pngfind.com/pngs/m/162-1621689_cloud9-lcs-jersey-cloud-9-csgo-jersey-hd.png"
-    },
-    {
-      "name": "oblong",
-      "desc": "Lorem ipsum dolor sit amet",
-      "price": 145600,
-      "src": "https://www.pngfind.com/pngs/m/162-1621689_cloud9-lcs-jersey-cloud-9-csgo-jersey-hd.png",
-      "id": 6
     },
     {
       "name": "Naruto",
       "desc": "Lorem ipsum dolot sit amet",
       "price": 14045,
+      "qty": 2,
       "src": "https://img.favpng.com/19/13/24/minato-namikaze-rasengan-goku-naruto-uzumaki-png-favpng-vJdH1T3McTrxPrfC8GY1Nn3rP.jpg",
       "id": 7
+    },
+    {
+      "name": "Indomie",
+      "desc": "Lorem ipsum dolot sit amet",
+      "price": 10000,
+      "qty": "1",
+      "src": "https://www.tokome.id/images/product/minilab99/MTS000988/2/kaos-pria-fullprint.jpg",
+      "id": 8
     }
   ]
 }

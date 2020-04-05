@@ -29,6 +29,7 @@ class ManageProduct extends Component{
                     <td>{product.name}</td>
                     <td>{product.desc}</td>
                     <td>Rp {product.price}</td>
+                    <td>{product.qty}</td>
                     <td><img className="list"  src={product.src} alt=""/></td>
                     <td>
                         <button onClick={ () => { this.onEditButton(product.id) } } className="btn btn-outline-secondary btn-block btn-sm"> Edit </button>
@@ -58,6 +59,7 @@ class ManageProduct extends Component{
         let name_source = this.name.value
         let desc_source = this.desc.value
         let price_source = parseInt(this.price.value)
+        let qty_soure = this.qty.value
         let src_source = this.src.value   
 
         axios.post(
@@ -66,6 +68,7 @@ class ManageProduct extends Component{
                 name: name_source, 
                 desc: desc_source, 
                 price: price_source, 
+                qty: qty_soure,
                 src: src_source
             }
         )
@@ -115,12 +118,13 @@ class ManageProduct extends Component{
         let name = this.editName.value ? this.editName.value : this.state.editProduct.name
         let price = parseInt(this.editPrice.value ? this.editPrice.value : this.state.editProduct.price)
         let desc = this.editDesc.value ? this.editDesc.value : this.state.editProduct.desc
+        let qty = this.editQty.value ? this.editQty.value : this.state.editQty.qty
         let src = this.editSrc.value ? this.editSrc.value : this.state.editProduct.src
 
         axios.patch(
             `/products/${this.state.editProduct.id}`,
             {
-                name,price,desc,src
+                name,price,desc,qty,src
             }
             ).then((res) => {
                 this.getData()
@@ -151,6 +155,7 @@ class ManageProduct extends Component{
                                 <th scope="col">NAME</th>
                                 <th scope="col">DESC</th>
                                 <th scope="col">PRICE</th>
+                                <th scope="col">QUANTITY</th>
                                 <th scope="col">PICTURE</th>
                                 <th scope="col">ACTION</th>
                             </tr>
@@ -171,6 +176,7 @@ class ManageProduct extends Component{
                                 <td scope="col"><input ref={(input) => {this.name = input}} placeholder="name" className="form-control" type="text"></input></td> 
                                 <td scope="col"><input ref={(input) => {this.desc = input}} placeholder="description" className="form-control" type="text"></input></td> 
                                 <td scope="col"><input ref={(input) => {this.price = input}} placeholder="price" className="form-control" type="text"></input></td> 
+                                <td scope="col"><input ref={(input) => {this.qty = input}} placeholder="quantity" className="form-control" type="text"></input></td> 
                                 <td scope="col"><input ref={(input) => {this.src = input}} placeholder="picture" className="form-control" type="text"></input></td>
                                 <td scope="col">
                                     <button onClick={this.onAddProducts} className="btn btn-outline-warning "> Add </button>
@@ -188,6 +194,7 @@ class ManageProduct extends Component{
                             Name : <input className="form-control" type="text" ref={(input) => { this.editName = input }} placeholder={this.state.editProduct.name}/>
                             Desc : <input className="form-control" type="text" ref={(input) => { this.editDesc = input }} placeholder={this.state.editProduct.desc}/>
                             Price : <input className="form-control" type="text" ref={(input) => { this.editPrice = input }} placeholder={this.state.editProduct.price}/>
+                            Quantity :<input className="form-control" type="text" ref={(input) => { this.editQty = input }} placeholder={this.state.editProduct.qty}/>
                             Img : <input className="form-control" type="text" ref={(input) => { this.editSrc = input }} placeholder={this.state.editProduct.src}/>
                         </ModalBody>
                         <ModalFooter>
@@ -201,9 +208,10 @@ class ManageProduct extends Component{
         } else {
             // alert('Silahkan Login')
             Swal.fire({
-                icon: 'error',
-                title: 'Waduh...',
-                text: `Anda belum login,Silahkan login ${Link.register}`
+                icon: 'warning',
+                title: 'Oops...',
+                text: 'Anda Harus Login!',
+                // footer: '<a href>Why do I have this issue?</a>'
               })
             return <Redirect to="/"/>
         }   
