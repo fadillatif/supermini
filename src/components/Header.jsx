@@ -32,12 +32,12 @@ class Header extends Component {
         if(this.props.username == ""){
             return(
                 <Nav className="ml-auto" navbar>
-                    <NavItem>
-                        <NavLink tag={Link} to="/register">register</NavLink>
+                    <NavItem >
+                        <NavLink tag={Link} to="/register" className="text-white">register</NavLink>
                     </NavItem>
 
                     <NavItem>
-                        <NavLink tag={Link} to="/login">login</NavLink>
+                        <NavLink tag={Link} to="/login" className="text-white">login</NavLink>
                     </NavItem>
                 </Nav>
             )
@@ -45,11 +45,11 @@ class Header extends Component {
             return(
                 <Nav className="ml-auto" navbar>
                     <UncontrolledDropdown nav inNavbar >
-                        <DropdownToggle nav caret >
-                            helo {this.props.username} 
+                        <DropdownToggle nav caret className="text-white" >
+                            helo, {this.props.username} !
                         </DropdownToggle>
 
-                        <DropdownMenu right>
+                        <DropdownMenu right >
                             <DropdownItem tag={Link} to="/ManageProduct">
                                 Catalog
                             </DropdownItem>

@@ -15,44 +15,63 @@
   ],
   "products": [
     {
-      "id": 1,
-      "name": "T-Shirt Supermie",
-      "desc": "Lorem ipsum dolor sit amet",
-      "price": 135000,
-      "qty": "3",
-      "src": "https://www.tokome.id/images/product/minilab99/MTS000988/2/kaos-pria-fullprint.jpg"
+      "name": "eevee",
+      "desc": "Lorem ipsum dolot sit amet",
+      "price": 100000,
+      "stock": "6",
+      "src": "https://pokemonletsgo.pokemon.com/assets/img/common/char-eevee.png",
+      "id": 1
     },
     {
-      "id": 2,
-      "name": "Sepatu Piero",
-      "desc": "Lorem ipsum dolor sit amet",
-      "price": 150000,
-      "qty": 2,
-      "src": "https://www.pngfind.com/pngs/m/162-1621689_cloud9-lcs-jersey-cloud-9-csgo-jersey-hd.png"
+      "name": "pikachu",
+      "desc": "Lorem ipsum dolot sit amet",
+      "price": 200000,
+      "stock": "5",
+      "src": "https://i0.pngocean.com/files/540/514/473/pokemon-let-s-go-pikachu-and-let-s-go-eevee-pokemon-x-and-y-drawing-pikachu.jpg",
+      "id": 2
+    },
+    {
+      "name": "beautifly",
+      "desc": "Lorem ipsum dolot sit amet",
+      "price": 300000,
+      "stock": "4",
+      "src": "https://www.pngfind.com/pngs/m/327-3274658_beautifly-imagenes-de-pokemon-beautifly-hd-png-download.png",
+      "id": 3
     },
     {
       "id": 4,
       "name": "T-Shirt O Neck",
       "desc": "Lorem ipsum dolor sit amet",
-      "price": 178000,
-      "qty": 2,
+      "price": 400000,
+      "stock": "3",
       "src": "https://www.pngfind.com/pngs/m/162-1621689_cloud9-lcs-jersey-cloud-9-csgo-jersey-hd.png"
     },
     {
-      "name": "Naruto",
-      "desc": "Lorem ipsum dolot sit amet",
-      "price": 14045,
-      "qty": 2,
-      "src": "https://img.favpng.com/19/13/24/minato-namikaze-rasengan-goku-naruto-uzumaki-png-favpng-vJdH1T3McTrxPrfC8GY1Nn3rP.jpg",
-      "id": 7
+      "id": 5,
+      "name": "T-Shirt Supermie",
+      "desc": "Lorem ipsum dolor sit amet",
+      "price": 500000,
+      "stock": "2",
+      "src": "https://www.tokome.id/images/product/minilab99/MTS000988/2/kaos-pria-fullprint.jpg"
     },
     {
-      "name": "Indomie",
+      "name": "T-Shirt Cap Ayam",
       "desc": "Lorem ipsum dolot sit amet",
-      "price": 10000,
-      "qty": "1",
-      "src": "https://www.tokome.id/images/product/minilab99/MTS000988/2/kaos-pria-fullprint.jpg",
-      "id": 8
+      "price": 600000,
+      "stock": "1",
+      "src": "https://ciptaloka-mockups.s3.amazonaws.com/design/rg4wbebw4y-18-0-2--l.jpg",
+      "id": 6
+    }
+  ],
+  "Carts": [
+    {
+      "name": "eevee",
+      "desc": "Lorem ipsum dolot sit amet",
+      "price": 100000,
+      "stock": "6",
+      "src": "https://pokemonletsgo.pokemon.com/assets/img/common/char-eevee.png",
+      "qty": 6,
+      "id": 1
     }
   ]
 }

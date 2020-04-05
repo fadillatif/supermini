@@ -24,7 +24,7 @@ class Home extends Component {
         return this.state.products.map((product) => {
 
             // memisahkan 3 digit angka dengan titik
-            product.price = product.price.toLocaleString('in')
+            // product.price = product.price.toLocaleString('in')
 
             return(     
                 // <div className="card col-lg-5 col-xl-3 mx-auto mx-xl-4 my-3">
