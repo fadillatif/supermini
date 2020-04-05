@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import axios from 'axios'
+import axios from '../config/axios'
 
 
 
@@ -14,8 +14,8 @@ class Register extends Component {
     
             // Simpan di json
             // GET, POST, PUT, PATCH
-            let linkPost = 'http://localhost:2020/users'
-            let linkGet = 'http://localhost:2020/users'
+            let linkPost = '/users'
+            let linkGet = '/users'
             let data = {username, email, password}
     
             // Get data

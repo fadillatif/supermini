@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import axios from 'axios'
+import axios from '../config/axios'
 import { connect } from 'react-redux'
 
 import { onLoginUser } from '../actions/index'
@@ -11,7 +11,7 @@ class Login extends Component {
             let username = this.username.value
             let password = this.password.value
 
-            let link = 'http://localhost:2020/users'
+            let link = '/users'
             let data = {username, password}
             axios.get(link, {params:data}).then((res) =>{
 

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import axios from 'axios'
+import axios from '../config/axios'
 export default class DetailProduct extends Component {
 
     state = {
@@ -7,7 +7,7 @@ export default class DetailProduct extends Component {
     }
 
     componentDidMount() {
-        axios.get(`http://localhost:2020/products/${this.props.match.params.id}`)
+        axios.get(`/products/${this.props.match.params.id}`)
         .then((res) => {
             this.setState({product: res.data})
         })

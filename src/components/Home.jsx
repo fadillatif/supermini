@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import axios from 'axios'
-import {Link} from 'react-router-dom'
-import DetailProduct from './DetailProduct'
+import axios from '../config/axios'
+
+import ProductItem from './ProductItem'
 
 class Home extends Component {
 
@@ -14,7 +14,7 @@ class Home extends Component {
     }
 
     getProducts = () => {
-        axios.get('http://localhost:2020/products')
+        axios.get('/products')
         .then((res) => {
             this.setState({ products: res.data})
         })
@@ -27,30 +27,31 @@ class Home extends Component {
             product.price = product.price.toLocaleString('in')
 
             return(     
-                <div className="card col-lg-5 col-xl-3 mx-auto mx-xl-4 my-3">
-                    <img className="card-img-top" src={product.src} alt=""/>
-                    <div className="card-body">
-                        <h5 className="card-title"> {product.name} </h5>
+                // <div className="card col-lg-5 col-xl-3 mx-auto mx-xl-4 my-3">
+                //     <img className="card-img-top" src={product.src} alt=""/>
+                //     <div className="card-body">
+                //         <h5 className="card-title"> {product.name} </h5>
 
-                        <p className="card-text">{product.desc}</p>
-                        <p className="card-text">Rp {product.price}</p>
+                //         <p className="card-text">{product.desc}</p>
+                //         <p className="card-text">Rp {product.price}</p>
 
-                        <input className="form-control" type="text" placeholder="Jumlah Qty"/>
+                //         <input className="form-control" type="text" placeholder="Jumlah Qty"/>
                         
-                        <Link to={`/DetailProduct/${product.id}`}>
-                            <button className="btn btn-secondary btn-block my-2">Detail</button>
-                        </Link>
+                //         <Link to={`/DetailProduct/${product.id}`}>
+                //             <button className="btn btn-secondary btn-block my-2">Detail</button>
+                //         </Link>
 
-                        <button className="btn btn-dark btn-block">Add to cart</button>
+                //         <button className="btn btn-dark btn-block">Add to cart</button>
                         
-                    </div>
-                </div>
+                //     </div>
+                // </div>
+                <ProductItem product={product} />
             )
         })
     }
 
     onButtonSrc = () => {
-        axios.get('http://localhost:2020/products')
+        axios.get('/products')
         .then((res) => {
             // SrcName
 

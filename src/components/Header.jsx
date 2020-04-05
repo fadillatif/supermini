@@ -44,24 +44,21 @@ class Header extends Component {
         } 
             return(
                 <Nav className="ml-auto" navbar>
-                    
-                        <NavLink tag={Link} to="/ManageProduct">Catalog</NavLink>
-                    
-
                     <UncontrolledDropdown nav inNavbar >
                         <DropdownToggle nav caret >
                             helo {this.props.username} 
                         </DropdownToggle>
+
                         <DropdownMenu right>
-                        <DropdownItem>
-                            option 1
-                            </DropdownItem>
                             <DropdownItem>
-                            option 2
+                                option 1
+                            </DropdownItem>
+                            <DropdownItem tag={Link} to="/ManageProduct">
+                                Catalog
                             </DropdownItem>
                             <DropdownItem divider />
                             <DropdownItem onClick={this.props.onLogoutUser} >
-                            Logout
+                                Logout
                             </DropdownItem>
                         </DropdownMenu>
                     </UncontrolledDropdown>
