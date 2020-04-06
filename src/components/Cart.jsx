@@ -46,12 +46,12 @@ class Cart extends Component {
 
     renderList = () => {
         return this.state.Carts.map((Carts) => {
-            Carts.price=Carts.price.toLocaleString('in')
+            Carts.price=Carts.price
             return(
                 <tr>
                     <td>{Carts.name}</td>
                     <td>{Carts.desc}</td>
-                    <td>Rp {Carts.price}</td>
+                    <td>Rp {Carts.price.toLocaleString('in')}</td>
                     <td>{Carts.qty}</td>
                     <td><img className="list"  src={Carts.src} alt=""/></td>
                     <td>
@@ -65,9 +65,49 @@ class Cart extends Component {
     
     }   
 
+    total = () => {
+        var totalCart = 0
+
+        let price = this.state.Carts.map((resCarts) => {
+            let finalPrice = resCarts.price * resCarts.qty
+            totalCart += finalPrice
+            
+            
+            // return (
+            //     <div className="row">
+            //             <div class="card-body">
+            //                 <h5 class="card-title">{resCarts.name}</h5>
+            //                 <p class="card-text">Rp. {resCarts.price.toLocaleString('in')} x {resCarts.qty} = Rp. {finalPrice.toLocaleString('in')}</p>
+            //         </div>
+            //      </div>
+            
+            // )
+        }) 
+        return (
+            <div className="row">
+                <div >
+                    {price}
+                </div>
+               
+                    <div className="mx-auto card">
+                    <div class="card-body text-center">
+                        <h5 className="card-title ">Anda Membayar:</h5>
+                        <h4 className="text-danger">Rp. {totalCart.toLocaleString('in')}</h4>
+                        
+                    </div>
+                    </div>
+                </div>
+          
+            )
+    
+        }
+        
+    
+
         render() {
             if(this.props.Username){
-            return (
+                return (
+            
 
                 <div className="container">
                     <h1 className="text-center display-4 ">Cart</h1>
@@ -85,21 +125,39 @@ class Cart extends Component {
                     <tbody>
                         {this.renderList()}
                     </tbody>
-                    </table>
-                </div> 
+                </table> 
+
+                    <div className="container">
+                        <div className="mt-3">
+                                <div className="card">
+
+                                    <div className=" border-bottom border-secondary card-title">
+                                        <h1 className="text-center">Total Belanja</h1>
+                                    </div>
+
+                                    <div className="card-body">
+                                        {this.total()}
+                                    </div>
+
+                                </div>
+                        </div>
+                    </div>
+                </div>
             )
             
+    
+            
+            
+               
+            
         } else {
-            Swal.fire({
-                icon: 'warning',
-                title: 'Oops...',
-                text: 'Anda Harus Login!',
-                // footer: '<a href>Why do I have this issue?</a>'
-                })
+            
             return <Redirect to="/Login"/>
+        
         }
     }
 }
+
 let mapStateToProps = (state) => {
     return {
         Username : state.auth.username

@@ -11,6 +11,12 @@
       "email": "rmdhn",
       "password": "123",
       "id": 2
+    },
+    {
+      "username": "ramadhan",
+      "email": "@yahoo.com",
+      "password": "123",
+      "id": 3
     }
   ],
   "products": [
@@ -65,12 +71,12 @@
   ],
   "Carts": [
     {
-      "name": "eevee",
+      "name": "pikachu",
       "desc": "Lorem ipsum dolot sit amet",
-      "price": 100000,
-      "stock": "6",
-      "src": "https://pokemonletsgo.pokemon.com/assets/img/common/char-eevee.png",
-      "qty": 6,
+      "price": 200000,
+      "stock": "5",
+      "src": "https://i0.pngocean.com/files/540/514/473/pokemon-let-s-go-pikachu-and-let-s-go-eevee-pokemon-x-and-y-drawing-pikachu.jpg",
+      "qty": 2,
       "id": 1
     }
   ]

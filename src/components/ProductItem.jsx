@@ -29,10 +29,12 @@ export default class ProductItem extends Component {
 
     render() {
         return (
-            <div key={this.props.product.id} className="card col-lg-5 col-xl-3 mx-auto mx-xl-4 my-3">
-            <div style={{ height:320 }}>
-            <img className="my-auto card-img-top gambar " src={this.props.product.src} alt=""/>
-
+           
+            <div key={this.props.product.id} className="card fit-img col-lg-5 col-xl-3 mx-auto mx-xl-4 my-3">
+                {/* // <div key={this.props.product.id} className="card col-md- px-0 my-3"> */}
+            <div style={{ height:290 }}>
+            <img className="my-auto card-img" src={this.props.product.src} alt=""/>
+            
             </div>
                 <div className="card-body">
                     <h5 className="card-title"> {this.props.product.name} </h5>
