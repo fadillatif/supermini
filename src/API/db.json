@@ -69,15 +69,5 @@
       "id": 6
     }
   ],
-  "Carts": [
-    {
-      "name": "eevee",
-      "desc": "Lorem ipsum dolot sit amet",
-      "price": 100000,
-      "stock": "6",
-      "src": "https://pokemonletsgo.pokemon.com/assets/img/common/char-eevee.png",
-      "qty": 2,
-      "id": 1
-    }
-  ]
+  "Carts": []
 }
