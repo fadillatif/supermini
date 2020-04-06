@@ -16,6 +16,9 @@ class Home extends Component {
     getProducts = () => {
         axios.get('/products')
         .then((res) => {
+            this.name.value=""
+            this.min.value=""
+            this.max.value=""
             this.setState({ products: res.data})
         })
     }
@@ -120,7 +123,7 @@ class Home extends Component {
                                     <input ref={(input) => { this.max = input}} placeholder="Max" className="form-control" type="text"/>
                                 
                                     <button onClick={this.onButtonSrc} className="btn btn-outline-primary btn-block mt-5">Search</button>
-                                    <button className="btn btn-outline-danger btn-block">Reset</button>
+                                    <button onClick={this.getProducts} className="btn btn-outline-danger btn-block">Reset</button>
                                 </div>
                             </div>
                         </div>

@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Redirect, Link } from 'react-router-dom'
 import {connect } from 'react-redux'
 import Swal from 'sweetalert2';
+import { UncontrolledCollapse, Button, CardBody, Card } from 'reactstrap'
 import axios from '../config/axios'
 
 class Cart extends Component {
@@ -16,9 +17,16 @@ class Cart extends Component {
 
     getData = () => {
         axios.get("/Carts").then(res => {
-            this.setState({Carts: res.data})
+            let result = res.data.filter((id)=>{
+                return(id.Username==this.props.username)
+            })
+            this.setState({Carts: result})
+            // this.setState({Carts: result})
+
         })
     }
+
+
 
     onDeleteCart = (id) => {
      
@@ -45,6 +53,7 @@ class Cart extends Component {
     }
 
     renderList = () => {
+        
         return this.state.Carts.map((Carts) => {
             Carts.price=Carts.price
             return(
@@ -73,15 +82,16 @@ class Cart extends Component {
             totalCart += finalPrice
             
             
-            // return (
-            //     <div className="row">
-            //             <div class="card-body">
-            //                 <h5 class="card-title">{resCarts.name}</h5>
-            //                 <p class="card-text">Rp. {resCarts.price.toLocaleString('in')} x {resCarts.qty} = Rp. {finalPrice.toLocaleString('in')}</p>
-            //         </div>
-            //      </div>
+            return (
+                <div className="row ">
+                        <div class="card-body">
+                            <h5 class="card-title">{resCarts.name}</h5>
+                            <h5 class="card-text text-black-50">Rp. {resCarts.price.toLocaleString('in')} x {resCarts.qty}  </h5>
+                            
+                        </div>
+                 </div>
             
-            // )
+            )
         }) 
         return (
             <div className="row">
@@ -89,10 +99,10 @@ class Cart extends Component {
                     {price}
                 </div>
                
-                    <div className="mx-auto card">
+                    <div className="mx-auto ">
                     <div class="card-body text-center">
                         <h5 className="card-title ">Anda Membayar:</h5>
-                        <h4 className="text-danger">Rp. {totalCart.toLocaleString('in')}</h4>
+                        <h4 className="text-black-50">Rp. {totalCart.toLocaleString('in')}</h4>
                         
                     </div>
                     </div>
@@ -106,50 +116,43 @@ class Cart extends Component {
 
         render() {
             if(this.props.Username){
+                
                 return (
-            
-
+                    
                 <div className="container">
-                    <h1 className="text-center display-4 ">Cart</h1>
-                <table className="table table-hover text-center mb-5">
-                    <thead>
-                        <tr>
-                            <th scope="col">NAME</th>
-                            <th scope="col">DESCRIPTION</th>
-                            <th scope="col" >PRICE</th>
-                            <th scope="col">QUANTITY</th>
-                            <th scope="col">PICTURE</th>
-                            <th scope="col">ACTION</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {this.renderList()}
-                    </tbody>
-                </table> 
-
-                    <div className="container">
-                        <div className="mt-3">
-                                <div className="card">
-
-                                    <div className=" border-bottom border-secondary card-title">
-                                        <h1 className="text-center">Total Belanja</h1>
-                                    </div>
-
-                                    <div className="card-body">
-                                        {this.total()}
-                                    </div>
-
-                                </div>
+                        <h1 className="text-center display-4 ">Cart</h1>
+                    <table className="table table-hover text-center mb-5">
+                        <thead>
+                            <tr>
+                                <th scope="col">NAME</th>
+                                <th scope="col">DESCRIPTION</th>
+                                <th scope="col" >PRICE</th>
+                                <th scope="col">QUANTITY</th>
+                                <th scope="col">PICTURE</th>
+                                <th scope="col">ACTION</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {this.renderList()}
+                        </tbody>
+                    </table> 
+                        <div>
+                        <div className=" border-bottom card-title">
+                        <Button className="btn btn-primary btn-block w-50 mx-auto"color="success" id="toggler" style={{ marginBottom: '1rem' }}>
+                            Checkout
+                        </Button>
+                        <UncontrolledCollapse toggler="#toggler">
+                            <Card>
+                                <CardBody>
+                                <h1 className="text-center">Total Belanja</h1>
+                                    {this.total()} 
+                                </CardBody>
+                            </Card>
+                        </UncontrolledCollapse>
                         </div>
                     </div>
                 </div>
             )
-            
-    
-            
-            
-               
-            
         } else {
             
             return <Redirect to="/Login"/>

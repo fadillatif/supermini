@@ -1,11 +1,15 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import axios from '../config/axios'
+import {Redirect} from 'react-router-dom'
+import {connect} from 'react-redux'
+import Swal from 'sweetalert2';
 
-export default class ProductItem extends Component {
+class ProductItem extends Component {
 
-    addToCart = () => {
-
+    addToCart = (state) => {
+        if(!this.props.Username == ""){
+   
         // Produck Id
         let Product_Name = this.props.product.name
         let Product_Desc = this.props.product.desc
@@ -16,6 +20,7 @@ export default class ProductItem extends Component {
         console.log(this.qty.value)
 
         // Post ke sb.json
+        let checkArr = []
         axios.post("/Carts", {
             name: Product_Name,
             desc: Product_Desc,
@@ -24,7 +29,16 @@ export default class ProductItem extends Component {
             src: Product_Src,
             qty: Product_Qty
         }).then(res => {})
+    } else {
+        Swal.fire({
+            icon: 'error',
+            title: 'Stop...',
+            text: 'Anda harus login!',
+           
+          })
+        return <Redirect to="/Login"/>
     }
+}    
 
 
     render() {
@@ -42,7 +56,7 @@ export default class ProductItem extends Component {
                     <p className="card-text">{this.props.product.desc}</p>
                     <p className="card-text">Rp {this.props.product.price.toLocaleString('in')}</p>
 
-                    <input ref={( input ) => { this.qty = input }} className="form-control" type="text" placeholder="Jumlah Qty"/>
+                 <input ref={( input ) => { this.qty = input }} className="form-control" type="number" placeholder={this.props.product.stock}/>
                     
                     <Link to={`/DetailProduct/${this.props.product.id}`}>
                         <button className="btn btn-secondary btn-block my-2">Detail</button>
@@ -55,4 +69,10 @@ export default class ProductItem extends Component {
         ) 
     }
 }
+let mapStateToProps = (state) => {
+    return {
+        Username : state.auth.username
+    }
+}
+export default connect(mapStateToProps)(ProductItem) 
     

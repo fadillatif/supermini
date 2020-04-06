@@ -29,6 +29,7 @@ class ManageProduct extends Component{
                     <td>{product.name}</td>
                     <td>{product.desc}</td>
                     <td>Rp {product.price}</td>
+                    <td>{product.stock}</td>
                     <td><img className="list"  src={product.src} alt=""/></td>
                     <td>
                         <button onClick={ () => { this.onEditButton(product.id) } } className="btn btn-outline-secondary btn-block btn-sm"> Edit </button>
@@ -57,6 +58,7 @@ class ManageProduct extends Component{
     onAddProducts = () => {
         let name_source = this.name.value
         let desc_source = this.desc.value
+        let stock_source = this.stock.value
         let price_source = parseInt(this.price.value)
         let src_source = this.src.value   
 
@@ -66,7 +68,8 @@ class ManageProduct extends Component{
                 name: name_source, 
                 desc: desc_source, 
                 price: price_source, 
-                src: src_source
+                src: src_source,
+                stock: stock_source
             }
         )
         .then((res) => {
@@ -116,11 +119,12 @@ class ManageProduct extends Component{
         let price = parseInt(this.editPrice.value ? this.editPrice.value : this.state.editProduct.price)
         let desc = this.editDesc.value ? this.editDesc.value : this.state.editProduct.desc
         let src = this.editSrc.value ? this.editSrc.value : this.state.editProduct.src
+        let stock = this.editStock.value ? this.editStock.value : this.state.editProduct.stock
 
         axios.patch(
             `/products/${this.state.editProduct.id}`,
             {
-                name,price,desc,src
+                name,price,desc,stock,src
             }
             ).then((res) => {
                 this.getData()
@@ -151,6 +155,7 @@ class ManageProduct extends Component{
                                 <th scope="col">NAME</th>
                                 <th scope="col">DESCRIPTION</th>
                                 <th scope="col">PRICE</th>
+                                <th scope="col">STOCK</th>
                                 <th scope="col">PICTURE</th>
                                 <th scope="col">ACTION</th>
                             </tr>
@@ -170,7 +175,8 @@ class ManageProduct extends Component{
                             <tr> 
                                 <td scope="col"><input ref={(input) => {this.name = input}} placeholder="name" className="form-control" type="text"></input></td> 
                                 <td scope="col"><input ref={(input) => {this.desc = input}} placeholder="description" className="form-control" type="text"></input></td> 
-                                <td scope="col"><input ref={(input) => {this.price = input}} placeholder="price" className="form-control" type="text"></input></td> 
+                                <td scope="col"><input ref={(input) => {this.stock = input}} placeholder="price" className="form-control" type="text"></input></td> 
+                                <td scope="col"><input ref={(input) => {this.price = input}} placeholder="stock" className="form-control" type="text"></input></td> 
                                 <td scope="col"><input ref={(input) => {this.src = input}} placeholder="picture" className="form-control" type="text"></input></td>
                                 <td scope="col">
                                     <button onClick={this.onAddProducts} className="btn btn-outline-warning "> Add </button>
@@ -188,6 +194,7 @@ class ManageProduct extends Component{
                             Name : <input className="form-control" type="text" ref={(input) => { this.editName = input }} placeholder={this.state.editProduct.name}/>
                             Desc : <input className="form-control" type="text" ref={(input) => { this.editDesc = input }} placeholder={this.state.editProduct.desc}/>
                             Price : <input className="form-control" type="text" ref={(input) => { this.editPrice = input }} placeholder={this.state.editProduct.price}/>
+                            Price : <input className="form-control" type="text" ref={(input) => { this.editStock = input }} placeholder={this.state.editProduct.stock}/>
                             Img : <input className="form-control" type="text" ref={(input) => { this.editSrc = input }} placeholder={this.state.editProduct.src}/>
                         </ModalBody>
                         <ModalFooter>
