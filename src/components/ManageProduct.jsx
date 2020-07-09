@@ -29,7 +29,6 @@ class ManageProduct extends Component{
                     <td>{product.name}</td>
                     <td>{product.desc}</td>
                     <td>Rp {product.price}</td>
-                    <td>{product.stock}</td>
                     <td><img className="list"  src={product.src} alt=""/></td>
                     <td>
                         <button onClick={ () => { this.onEditButton(product.id) } } className="btn btn-outline-secondary btn-block btn-sm"> Edit </button>
@@ -119,12 +118,11 @@ class ManageProduct extends Component{
         let price = parseInt(this.editPrice.value ? this.editPrice.value : this.state.editProduct.price)
         let desc = this.editDesc.value ? this.editDesc.value : this.state.editProduct.desc
         let src = this.editSrc.value ? this.editSrc.value : this.state.editProduct.src
-        let stock = this.editStock.value ? this.editStock.value : this.state.editProduct.stock
 
         axios.patch(
             `/products/${this.state.editProduct.id}`,
             {
-                name,price,desc,stock,src
+                name,price,desc,src
             }
             ).then((res) => {
                 this.getData()
@@ -155,7 +153,6 @@ class ManageProduct extends Component{
                                 <th scope="col">NAME</th>
                                 <th scope="col">DESCRIPTION</th>
                                 <th scope="col">PRICE</th>
-                                <th scope="col">STOCK</th>
                                 <th scope="col">PICTURE</th>
                                 <th scope="col">ACTION</th>
                             </tr>

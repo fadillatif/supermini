@@ -14,18 +14,16 @@ class ProductItem extends Component {
         let Product_Name = this.props.product.name
         let Product_Desc = this.props.product.desc
         let Product_Price = parseInt(this.props.product.price)
-        let Product_Stock = this.props.product.stock
         let Product_Src = this.props.product.src   
         let Product_Qty = parseInt(this.qty.value)
         console.log(this.qty.value)
 
-        // Post ke sb.json
+        // Post ke db.json
         let checkArr = []
         axios.post("/Carts", {
             name: Product_Name,
             desc: Product_Desc,
             price: Product_Price,
-            stock: Product_Stock,
             src: Product_Src,
             qty: Product_Qty
         }).then(res => {})
